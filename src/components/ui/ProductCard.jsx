@@ -3,16 +3,16 @@ import Button from './button.jsx'
 import Card from './Card.jsx'
 import reactLogo from '../../assets/react.svg'
 
-const ProductCard = ({message, onClick}) => {
+const ProductCard = ({imageUrl,message, onClick}) => {
     const handleButtonClick = (e) => {
         e.stopPropagation();
         alert("add to card clicked");
     }
 
     return (
-        <Card className={"space-y-1.5 p-2"} onClick={onClick}>
+        <Card className={"w-50 space-y-1.5 p-2"} onClick={onClick}>
             <div className={"w-full aspect-square rounded-md overflow-hidden flex items-center justify-center relative"}>
-                <img src={reactLogo} alt="" className={"w-full aspect-square bg-cover"}/>
+                <img src={imageUrl} alt="" className={" aspect-square bg-cover"}/>
                 {message && cardMessage(message)}
             </div>
             <div>
@@ -21,7 +21,7 @@ const ProductCard = ({message, onClick}) => {
             <div>
                 <p className={"font-bold text-[#22a875] text-2xl"}>$110</p>
             </div>
-            <Button onClick={handleButtonClick} variation={"primary"} width={"200px"} height={"40px"} fontSize={"18px"} color={"primary"} className={"font-medium"}>
+            <Button onClick={handleButtonClick} variation={"primary"} height={"40px"} fontSize={"18px"} color={"primary"} className={"w-full font-medium"}>
                 Add to Cart
             </Button>
         </Card>

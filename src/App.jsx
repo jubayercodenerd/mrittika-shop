@@ -8,7 +8,11 @@ function App() {
     }
   return (
     <>
-        <ProductCard message={"Low Stock!"}  onClick={handleClick} />
+        <div className={"space-x-5"}>
+            <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
+            <ProductCard imageUrl={"/public/clayPot3.webp"} message={""}  onClick={handleClick} />
+            <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
+        </div>
     </>
   )
 }
