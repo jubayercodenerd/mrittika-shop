@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from './components/ui/Button.jsx'
+import ProductCard from "./components/ui/ProductCard.jsx";
 import './App.css'
 
 function App() {
@@ -8,9 +8,7 @@ function App() {
     }
   return (
     <>
-      <Button variation={"primary"} width={"150px"} height={"40px"} fontSize={'20px'} className={''} onClick={handleClick}>
-        <p>hello world</p>
-      </Button>
+        <ProductCard message={"Low Stock!"}  onClick={handleClick} />
     </>
   )
 }
