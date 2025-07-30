@@ -14,7 +14,7 @@ const Button = ({children, variation, height, width, fontSize='auto', className,
             height:height,
             width:width,
             fontSize:fontSize,
-        }} className={`${variants[variation]} rounded-md transition-colors duration-200 ease-in-out flex items-center justify-center ${className}`}>
+        }} className={`${variants[variation]} rounded-md transition-colors duration-200 ease-in-out flex items-center justify-center ${className} cursor-pointer`}>
             {children}
         </button>
     )

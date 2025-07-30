@@ -10,7 +10,7 @@ const ProductCard = ({imageUrl,message, onClick}) => {
     }
 
     return (
-        <Card className={"w-50 space-y-1.5 p-2"} onClick={onClick}>
+        <Card className={"w-35 sm:w-40 md:w-45 lg:w-50 xl:w-55 2xl:w-60 space-y-1.5 p-2 "} onClick={onClick}>
             <div className={"w-full aspect-square rounded-md overflow-hidden flex items-center justify-center relative"}>
                 <img src={imageUrl} alt="" className={" aspect-square bg-cover"}/>
                 {message && cardMessage(message)}
