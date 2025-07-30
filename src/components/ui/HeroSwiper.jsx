@@ -22,7 +22,7 @@ const HeroSwiper = () => {
             id: 3,
             title: 'Limited Edition',
             description: 'Exclusive designs available for a limited time',
-            image: 'https://thumbs.dreamstime.com/b/terracotta-long-banner-template-floral-line-art-print-abstract-modern-digital-painting-fashion-scandinavian-style-color-liquid-158655063.jpg',
+            image: 'https://www.gujarattourism.com/content/dam/gujrattourism/images/july/Terracotta-banner-2.jpg',
         },
     ];
 

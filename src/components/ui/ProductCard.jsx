@@ -30,7 +30,7 @@ const ProductCard = ({imageUrl,message, onClick}) => {
 
 const cardMessage = (message) => {
     return (
-        <div className={"w-full h-6 bg-red-500 absolute -rotate-45 -right-15 bottom-7 flex justify-center items-center text-white text-sm font-bold"}>{message}</div>
+        <div className={"w-full h-6 bg-red-500 absolute -rotate-45 -right-8 bottom-6 md:-right-11 md:bottom-6 xl:-right-15 xl:bottom-7 2xl:-right-17 2xl:bottom-7 flex justify-center items-center text-white text-xs md:text-sm lg:text-sm xl:text-sm 2xl:text-sm font-bold"}>{message}</div>
     )
 
 }
