@@ -1,0 +1,6 @@
+      primary: '#c7855f',
+      secondary: '#4e132f',
+      accent: '#4e132f',
+      positive: '#22c55e',
+      negative: '#ef4444',
+      darkBg: '#2b2b2b',

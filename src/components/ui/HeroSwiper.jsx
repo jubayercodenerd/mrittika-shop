@@ -35,7 +35,7 @@ const HeroSwiper = () => {
     };
 
     return (
-        <section className="relative ml-auto mr-auto w-[95%] md:w-[90%] xl:w-[80%] aspect-[21/8] rounded-xl overflow-hidden bg-gray-100">
+        <section className="relative justify-center ml-auto mr-auto w-[95%] md:w-[90%] xl:w-[80%] aspect-[21/8] rounded-xl overflow-hidden bg-gray-100">
             <div className="absolute inset-0 z-0">
                 {slides.map((slide, index) => (
                     <div
@@ -53,7 +53,7 @@ const HeroSwiper = () => {
                 ))}
             </div>
 
-            <div className="relative z-20 flex flex-col items-center justify-center h-full text-white px-4 sm:px-6 lg:px-8">
+            <div className="relative z-20 flex flex-col items-center justify-end h-full text-white py-6 md:py-8 xl:py-10 2xl:py-12 px-4 sm:px-6 lg:px-8">
                 <h1
                     className="
             text-sm md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl
@@ -71,7 +71,7 @@ const HeroSwiper = () => {
                     {slides[currentSlide].description}
                 </p>
                 <Button
-                    variation="primary"
+                    variation="secondary"
                     className="
             text-black py-1 px-2.5 sm:py-1 sm:px-2.5 xl:py-2 xl:px-5 2xl:py-3 2xl:px-8
             text-xs md:text-sm lg:text-xl xl:text-xl 2xl:text-2xl
@@ -79,7 +79,7 @@ const HeroSwiper = () => {
                     aria-label="Shop now"
                 >
                     <span>Shop Now</span>
-                    <FaShoppingCart className="ml-2" />
+                    <FaShoppingCart className="ml-2 " />
                 </Button>
             </div>
 
@@ -92,7 +92,7 @@ const HeroSwiper = () => {
           focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 aria-label="Previous slide"
             >
-                <FaAngleLeft className="size-3 md:size-4 xl:size-5 2xl:size-7 cursor-pointer" />
+                <FaAngleLeft className="size-3 md:size-4 xl:size-5 2xl:size-7 text-[#4e132f] cursor-pointer" />
             </button>
 
             <button
@@ -104,7 +104,7 @@ const HeroSwiper = () => {
           focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 aria-label="Next slide"
             >
-                <FaAngleRight className="size-3 md:size-4 xl:size-5 2xl:size-7 cursor-pointer" />
+                <FaAngleRight className="size-3 md:size-4 xl:size-5 2xl:size-7 text-[#4e132f] cursor-pointer" />
             </button>
 
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 z-30">
@@ -114,10 +114,10 @@ const HeroSwiper = () => {
                         onClick={() => setCurrentSlide(index)}
                         className={`
               rounded-full transition-all duration-300 
-              focus:outline-none
+              focus:outline-none cursor-pointer
               ${index === currentSlide
-                            ? 'bg-white w-1 h-1 md:w-1.5 md:h-1.5 xl:w-2.5 xl:h-2.5 scale-125'
-                            : 'bg-white bg-opacity-50 w-1 h-1 md:w-1.25 md:h-1.25 xl:w-2 xl:h-2 scale-100'}
+                            ? 'bg-[#4e132f] w-1 h-1 md:w-1.5 md:h-1.5 xl:w-2.5 xl:h-2.5 scale-125'
+                            : 'bg-[#5e233f] bg-opacity-50 w-1 h-1 md:w-1.25 md:h-1.25 xl:w-2 xl:h-2 scale-100'}
             `}
                         aria-label={`Go to slide ${index + 1}`}
                     ></button>
