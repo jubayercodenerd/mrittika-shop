@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import ProductCard from "./components/ui/ProductCard.jsx";
 import HeroSwiper from "./components/ui/HeroSwiper.jsx"
 import Footer from "./components/shared/Footer.jsx"
