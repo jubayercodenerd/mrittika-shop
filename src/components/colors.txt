@@ -1,5 +1,5 @@
       primary: '#c7855f',
-      secondary: '#4e132f',
+      secondary: '#4e132f','orange-100'
       accent: '#4e132f',
       positive: '#22c55e',
       negative: '#ef4444',

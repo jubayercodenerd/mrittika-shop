@@ -66,7 +66,7 @@ const HeroSwiper = () => {
                     className="
             text-xs md:text-sm lg:text-xl xl:text-xl 2xl:text-2xl
             text-center mb-1 md:mb-3 xl:mb-5 2xl:mb-8
-            transition-all duration-700 transform"
+            transition-all duration-700 transform text"
                 >
                     {slides[currentSlide].description}
                 </p>
@@ -87,9 +87,8 @@ const HeroSwiper = () => {
                 onClick={prevSlide}
                 className="
           absolute left-4 top-1/2 transform -translate-y-1/2
-          bg-white bg-opacity-50 p-2 rounded-full text-black z-30
-          hover:bg-opacity-75 transition-all duration-300
-          focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+           p-2 rounded-full text-black z-30
+          hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Previous slide"
             >
                 <FaAngleLeft className="size-3 md:size-4 xl:size-5 2xl:size-7 text-[#4e132f] cursor-pointer" />
@@ -99,9 +98,8 @@ const HeroSwiper = () => {
                 onClick={nextSlide}
                 className="
           absolute right-4 top-1/2 transform -translate-y-1/2
-          bg-white bg-opacity-50 p-2 rounded-full text-black z-30
-          hover:bg-opacity-75 transition-all duration-300
-          focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+           p-2 rounded-full text-black z-30
+          hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Next slide"
             >
                 <FaAngleRight className="size-3 md:size-4 xl:size-5 2xl:size-7 text-[#4e132f] cursor-pointer" />
