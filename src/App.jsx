@@ -14,7 +14,7 @@ const columns = [
     {key: "actions",
         label: "Actions",
         render: (row) => (
-            <div className={"h-full flex justify-around items-center p-.5"}>
+            <div className={"h-full flex justify-around items-center p-[2px] space-x-1"}>
                 <Button onClick={() => alert("edit " + row.id)} variation={"primary"} className={"px-2 h-full text-lg font-semibold"}>View</Button>
                 <Button onClick={() => alert("cancel " + row.id)} variation={"primary"} className={"px-2 h-full text-lg font-semibold"}>Cancel</Button>
             </div>
@@ -55,7 +55,7 @@ function App() {
                 <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
             </div>
             <QuantitySelector/>
-            <div className={"w-[55%]"}>
+            <div className={"w-[95%] md:w-[80%] xl:w-[55%]"}>
                 <Table columns={columns} data={data}/>
             </div>
             <Footer />
