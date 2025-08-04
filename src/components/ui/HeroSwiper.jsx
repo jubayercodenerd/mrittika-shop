@@ -35,7 +35,7 @@ const HeroSwiper = () => {
     };
 
     return (
-        <section className="relative justify-center ml-auto mr-auto w-[95%] md:w-[90%] xl:w-[80%] aspect-[21/8] rounded-xl overflow-hidden bg-gray-100">
+        <section className="relative justify-center ml-auto mr-auto w-[95%] md:w-[90%] xl:w-[80%] aspect-[21/8] rounded-xl overflow-hidden bg-gray-100 z-0">
             <div className="absolute inset-0 z-0">
                 {slides.map((slide, index) => (
                     <div

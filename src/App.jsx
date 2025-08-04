@@ -5,6 +5,7 @@ import './App.css'
 import QuantitySelector from "./components/ui/QuantitySelector.jsx";
 import Table from "./components/ui/Table.jsx";
 import Button from "./components/ui/Button.jsx";
+import Navbar from "./components/shared/Navbar.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
@@ -48,6 +49,7 @@ function App() {
     }
   return (
     <>  <div className={"min-h-screen space-y-5 flex flex-col justify-between items-center"}>
+            <Navbar />
             <HeroSwiper />
             <div className={"space-x-5 space-y-5"}>
                 <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
