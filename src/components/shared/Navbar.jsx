@@ -34,26 +34,26 @@ const Navbar = () => {
                         className="h-full object-contain"
                     />
                 </div>
-                <SearchBar placeHolder="Search for products..." outerDivClassName={`w-60 xl:w-130 lg:w-100 max-lg:hidden`}/>
+                <SearchBar placeHolder="Search for products..." outerDivClassName={`w-80 xl:w-130 lg:w-100 max-md:hidden`}/>
                 <div  className="h-full w-auto flex items-center justify-between {/*border border-red-500*/} ">
                     <ul className={"h-full flex justify-center items-center flex-nowrap gap-5 text-orange-100"}>
-                        <li className={"flex items-center justify-center max-lg:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaHome/><p> Home</p></Button>
+                        <li className={"flex items-center justify-center max-md:hidden"}>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaHome/><p className={"max-xl:hidden"}>Home</p></Button>
                         </li>
-                        <li className={"flex items-center justify-center max-lg:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaBoxes/><p>Products</p></Button>
+                        <li className={"flex items-center justify-center max-md:hidden"}>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaBoxes/><p className={"max-xl:hidden"}>Products</p></Button>
                         </li>
-                        <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaTruck/><p className={"max-lg:hidden"}>Orders</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaShoppingCart/><p className={"max-lg:hidden"}>Cart</p></Button>
+                        <li className={"flex items-center justify-center max-md:hidden"}>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaTruck/><p className={"max-xl:hidden"}>Orders</p></Button>
                         </li>
                         <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaGlobe/><p className={"max-lg:hidden"}>Login</p></Button>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaShoppingCart/><p className={"max-xl:hidden"}>Cart</p></Button>
                         </li>
                         <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaUser/><p className={"max-lg:hidden"}>Profile</p></Button>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaGlobe/><p className={""}>Login</p></Button>
+                        </li>
+                        <li className={"flex items-center justify-center max-md:hidden"}>
+                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaUser/><p className={"max-xl:hidden"}>Profile</p></Button>
                         </li>
                     </ul>
                 </div>
@@ -99,7 +99,7 @@ const SidePanel = ({onClick, isSideBarOpen}) => {
                         <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaUser/><p>Profile</p></Button>
                     </li>
                     <li className={"flex items-center justify-center"}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaHome/><p> Home</p></Button>
+                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaHome/><p>Home</p></Button>
                     </li>
                     <li className={"flex items-center justify-center"}>
                         <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaBoxes/><p>Products</p></Button>
