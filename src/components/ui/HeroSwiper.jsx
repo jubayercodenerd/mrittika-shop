@@ -71,7 +71,7 @@ const HeroSwiper = () => {
                     {slides[currentSlide].description}
                 </p>
                 <Button
-                    variation="secondary"
+                    variation="accent"
                     className="
             text-black py-1 px-2.5 sm:py-1 sm:px-2.5 xl:py-2 xl:px-5 2xl:py-3 2xl:px-8
             text-xs md:text-sm lg:text-xl xl:text-xl 2xl:text-2xl
