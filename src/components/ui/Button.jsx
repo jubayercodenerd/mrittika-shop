@@ -4,7 +4,8 @@ const Button = ({children, variation, height, width, fontSize='auto', className,
 
     const variants = {
         primary: 'bg-[#c7855f] text-white hover:bg-[#e9b388] ',
-        secondary: 'bg-[#4e132f] text-white hover:bg-[#5e233f]',
+        secondary: 'bg-orange-100 text-white hover:bg-[#5e233f]',
+        accent: 'bg-[#4e132f] text-white hover:bg-[#5e233f]',
         positive: 'bg-[#22c55e] text-white hover:bg-green-600',
         negative: 'bg-[#ef4444] text-white hover:bg-red-600',
     }
