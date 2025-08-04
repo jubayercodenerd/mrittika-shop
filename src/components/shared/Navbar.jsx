@@ -36,7 +36,7 @@ const Navbar = () => {
                 </div>
                 <SearchBar placeHolder="Search for products..." outerDivClassName={`w-80 xl:w-130 lg:w-100 max-md:hidden`}/>
                 <div  className="h-full w-auto flex items-center justify-between {/*border border-red-500*/} ">
-                    <ul className={"h-full flex justify-center items-center flex-nowrap gap-5 text-orange-100"}>
+                    <ul className={"h-full flex justify-center items-center flex-nowrap gap-1 md:gap-5 text-orange-100"}>
                         <li className={"flex items-center justify-center max-md:hidden"}>
                             <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaHome/><p className={"max-xl:hidden"}>Home</p></Button>
                         </li>
