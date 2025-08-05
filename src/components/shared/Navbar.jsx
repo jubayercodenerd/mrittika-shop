@@ -76,12 +76,24 @@ const CategoryBar = () =>{
     return(
         <div className="w-full absolute top-full h-12 flex justify-center items-center bg-orange-100 shadow-gray-400 shadow-sm max-md:hidden">
             <ul className={"w-[95%] lg:w-[85%] xl:w-[80%] flex justify-center gap-10 items-center font-medium"}>
-                <li>Bamboo Crafts</li>
-                <li>WoodWork</li>
-                <li>Fabric & Jute</li>
-                <li>Metal Crafts</li>
-                <li>Recycled Art</li>
-                <li>Home Decor</li>
+                <li className={"flex items-center justify-center"}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Bamboo Crafts</p></Button>
+                </li>
+                <li className={"flex items-center justify-center"}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>WoodWork</p></Button>
+                </li>
+                <li className={"flex items-center justify-center"}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Fabric & Jute</p></Button>
+                </li>
+                <li className={"flex items-center justify-center "}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Metal Crafts</p></Button>
+                </li>
+                <li className={"flex items-center justify-center "}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Recycled Art</p></Button>
+                </li>
+                <li className={"flex items-center justify-center "}>
+                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Home Decor</p></Button>
+                </li>
             </ul>
         </div>
     )
