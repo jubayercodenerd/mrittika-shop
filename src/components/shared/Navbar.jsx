@@ -25,7 +25,7 @@ const Navbar = () => {
         setIsSideBarOpen(!isSideBarOpen);
     }
     return (<>
-        <div className="space py-3 flex items-center justify-center px-6 h-15 xl:h-20 mb-15 max-md:mb-3 bg-[#2b2b2b] w-full sticky top-0 z-20 max-md:shadow-gray-400 max-md:shadow-sm">
+        <div className="space py-3 flex items-center justify-center px-6 h-15 xl:h-20 mb-12 max-md:mb-0 bg-[#2b2b2b] w-full sticky top-0 z-20 max-md:shadow-gray-400 max-md:shadow-sm">
             <div className="gap-2 h-full w-[95%] md:w-[90%] lg:w-[80%] xl:w-[80%] flex items-center justify-between {/*border border-red-500*/}">
                 <div className="h-full flex items-center ">
                     <img

@@ -7,6 +7,7 @@ import Table from "./components/ui/Table.jsx";
 import Button from "./components/ui/Button.jsx";
 import Navbar from "./components/shared/Navbar.jsx";
 import ProductGrid from "./components/ui/ProductGrid.jsx";
+import HomePage from "./Pages/HomePage.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
@@ -49,24 +50,25 @@ function App() {
         alert('Hello World!')
     }
   return (
-    <>  <div className={"min-h-screen space-y-5 flex flex-col justify-between items-center"}>
-            <Navbar />
-            <HeroSwiper />
-            <ProductGrid>
-                <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
-                <ProductCard imageUrl={"/public/clayPot3.webp"} message={""}  onClick={handleClick} />
-                <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
-                <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
-                <ProductCard imageUrl={"/public/clayPot3.webp"} message={""}  onClick={handleClick} />
-                <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
-            </ProductGrid>
-            <QuantitySelector/>
-            <div className={"w-[95%] md:w-[80%] xl:w-[55%]"}>
-                <Table columns={columns} data={data}/>
-            </div>
-            <Footer />
-        </div>
-    </>
+      <HomePage/>
+    // <>  <div className={"min-h-screen space-y-5 flex flex-col justify-between items-center"}>
+    //         <Navbar />
+    //         <HeroSwiper />
+    //         <ProductGrid>
+    //             <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
+    //             <ProductCard imageUrl={"/public/clayPot3.webp"} message={""}  onClick={handleClick} />
+    //             <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
+    //             <ProductCard imageUrl={"/public/clayPot2.webp"} message={"Low Stock!"}  onClick={handleClick} />
+    //             <ProductCard imageUrl={"/public/clayPot3.webp"} message={""}  onClick={handleClick} />
+    //             <ProductCard imageUrl={"/public/clayPot1.webp"} message={"Stock Out!"}  onClick={handleClick} />
+    //         </ProductGrid>
+    //         <QuantitySelector/>
+    //         <div className={"w-[95%] md:w-[80%] xl:w-[55%]"}>
+    //             <Table columns={columns} data={data}/>
+    //         </div>
+    //         <Footer />
+    //     </div>
+    // </>
   )
 }
 
