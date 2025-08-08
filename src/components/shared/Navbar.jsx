@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="gap-2 h-full w-[95%] md:w-[90%] lg:w-[80%] xl:w-[80%] flex items-center justify-between {/*border border-red-500*/}">
                 <div className="h-full flex items-center ">
                     <img
-                        src="/transparent-logo-secondary.png"
+                        src="/Logos/transparent-logo-secondary.png"
                         alt="Logo"
                         className="h-full object-contain"
                     />

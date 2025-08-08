@@ -7,7 +7,7 @@ import Table from "./components/ui/Table.jsx";
 import Button from "./components/ui/Button.jsx";
 import Navbar from "./components/shared/Navbar.jsx";
 import ProductGrid from "./components/ui/ProductGrid.jsx";
-import HomePage from "./Pages/HomePage.jsx";
+import HomePage from "./Pages/HomePage/HomePage.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
