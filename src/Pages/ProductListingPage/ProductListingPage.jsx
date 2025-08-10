@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import Navbar from "../../components/shared/Navbar.jsx";
 import Section from "../../components/ui/Section.jsx";
 import H1 from "../../components/ui/H1.jsx";
