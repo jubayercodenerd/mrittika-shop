@@ -11,7 +11,7 @@ import {FaArrowDown, FaArrowUp} from "react-icons/fa";
 const ProductListingPage = () => {
 
     return (
-        <main className={"m-h-screen w-full flex flex-col justify-center items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
+        <main className={"min-h-screen w-full flex flex-col justify-center items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
             <Navbar />
             <Section>
                 <div className={"w-full flex items-center justify-between flex-wrap space-x-4 gap-y-2"}>

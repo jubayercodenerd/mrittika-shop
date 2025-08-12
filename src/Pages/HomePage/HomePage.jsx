@@ -12,7 +12,7 @@ import CategoryGrid from "./CategoryGrid.jsx";
 const HomePage = () => {
     return (
         <>
-            <main className={"m-h-screen w-full flex flex-col justify-center items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
+            <main className={"min-h-screen w-full flex flex-col justify-center items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
                 <Navbar />
                 <Section>
                     <HeroSwiper/>
