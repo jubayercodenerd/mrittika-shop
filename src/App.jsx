@@ -9,6 +9,8 @@ import Navbar from "./components/shared/Navbar.jsx";
 import ProductGrid from "./components/ui/ProductGrid.jsx";
 import HomePage from "./Pages/HomePage/HomePage.jsx";
 import ProductListingPage from "./Pages/ProductListingPage/ProductListingPage.jsx";
+import CartPage from "./Pages/CartPage/CartPage.jsx";
+import CheckOutPage from "./Pages/CheckOutPage/CheckOutPage.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
@@ -51,8 +53,10 @@ function App() {
         alert('Hello World!')
     }
   return (
-      <HomePage/>
+      //<HomePage/>
       //<ProductListingPage/>
+      //<CartPage/>
+      <CheckOutPage/>
   )
 }
 
