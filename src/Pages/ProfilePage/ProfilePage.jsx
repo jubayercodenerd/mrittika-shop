@@ -49,7 +49,7 @@ const ProfileInfo = ({ imageUrl, name, email, phone, address, handleChange, hand
                 { label: "Phone", value: phone, name: "phone" },
                 { label: "Address", value: address, name: "address" }
             ].map(({ label, value, name }) => (
-                <div key={name} className="w-full h-15 flex flex-col items-start justify-center">
+                <div key={name} className="w-full h-15 md:h-20 flex flex-col items-start justify-center">
                     <P>{label}</P>
                     <div className="w-full h-full bg-orange-100">
                         <input
@@ -57,7 +57,7 @@ const ProfileInfo = ({ imageUrl, name, email, phone, address, handleChange, hand
                             name={name}
                             value={value}
                             onChange={handleChange}
-                            className="w-full h-full px-3 focus:outline-none"
+                            className="w-full h-full px-3 md:px-4 md:text-lg focus:outline-none"
                         />
                     </div>
                 </div>
