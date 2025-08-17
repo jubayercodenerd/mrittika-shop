@@ -12,6 +12,7 @@ import ProductListingPage from "./Pages/ProductListingPage/ProductListingPage.js
 import CartPage from "./Pages/CartPage/CartPage.jsx";
 import CheckOutPage from "./Pages/CheckOutPage/CheckOutPage.jsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx";
+import OrdersPage from "./Pages/OrdersPage/OrdersPage.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
@@ -58,7 +59,8 @@ function App() {
       //<ProductListingPage/>
       //<CartPage/>
       //<CheckOutPage/>
-      <ProfilePage/>
+      // <ProfilePage/>
+      <OrdersPage/>
   )
 }
 
