@@ -16,4 +16,6 @@ const ProductViewDetailsPage = () => {
         </>
     )
 }
+
+const images = ["/TemporaryProductImages/clayPot1.webp", "/TemporaryProductImages/clayPot2.webp", "/TemporaryProductImages/clayPot2.webp","/TemporaryProductImages/clayPot1.webp", "/TemporaryProductImages/clayPot2.webp", "/TemporaryProductImages/clayPot2.webp"]
 export default ProductViewDetailsPage
