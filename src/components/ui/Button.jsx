@@ -3,12 +3,12 @@ import React from 'react'
 const Button = ({children, variation, height, width, fontSize='auto', className, onClick}) => {
 
     const variants = {
-        primary: 'bg-[#c7855f] text-white hover:bg-[#e9b388] ',
-        secondary: 'bg-orange-100 text-white hover:bg-[#5e233f]',
-        accent: 'bg-[#4e132f] text-orange-100 hover:bg-[#5e233f]',
-        positive: 'bg-[#22c55e] text-white hover:bg-green-600',
-        negative: 'bg-[#ef4444] text-white  hover:bg-red-600',
-        card: 'bg-[#ffffff] shadow-md text-[#2b2b2b]',
+        primary: 'bg-[#c7855f] text-white hover:bg-[#e9b388] rounded-md',
+        secondary: 'bg-orange-100 text-white hover:bg-[#5e233f] rounded-md',
+        accent: 'bg-[#4e132f] text-orange-100 hover:bg-[#5e233f] rounded-md',
+        positive: 'bg-[#22c55e] text-white hover:bg-green-600 rounded-md',
+        negative: 'bg-[#ef4444] text-white  hover:bg-red-600 rounded-md',
+        card: 'bg-[#ffffff] shadow-md text-[#2b2b2b] rounded-md',
         ghost: 'bg-transparent hover:bg-transparent active:border-1 active:border-gray-400',
     }
     return (
@@ -17,7 +17,7 @@ const Button = ({children, variation, height, width, fontSize='auto', className,
             height:height,
             width:width,
             fontSize:fontSize,
-        }} className={`${variants[variation]} rounded-md transition-colors duration-200 ease-in-out flex items-center justify-center ${className} cursor-pointer`}>
+        }} className={`${variants[variation]} transition-colors duration-200 ease-in-out flex items-center justify-center ${className} cursor-pointer`}>
             {children}
         </button>
     )
