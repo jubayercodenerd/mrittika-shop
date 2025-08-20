@@ -6,7 +6,7 @@ import H1 from "../../components/ui/H1.jsx";
 import P from "../../components/ui/P.jsx";
 import Button from "../../components/ui/Button.jsx";
 
-const ProductViewDetailsPage = () => {
+const ProductPage = () => {
     return (
         <>
             <main className={"min-h-screen w-full flex flex-col justify-between items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
@@ -68,4 +68,4 @@ const ProductDetails = ({images, categoryTags, price, productName}) => {
 
 const images = ["/TemporaryProductImages/clayPot1.webp", "/TemporaryProductImages/clayPot2.webp", "/TemporaryProductImages/clayPot3.webp"]
 const categoryTags = ["Terracotta", "Home Decor", "Recycled Art"]
-export default ProductViewDetailsPage
+export default ProductPage

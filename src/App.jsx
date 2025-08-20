@@ -13,7 +13,7 @@ import CartPage from "./Pages/CartPage/CartPage.jsx";
 import CheckOutPage from "./Pages/CheckOutPage/CheckOutPage.jsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx";
 import OrdersPage from "./Pages/OrdersPage/OrdersPage.jsx";
-import ProductViewDetailsPage from "./Pages/ProductViewDetailsPage/ProductViewDetailsPage.jsx";
+import ProductViewDetailsPage from "./Pages/ProductPage/ProductPage.jsx";
 
 const columns = [
     {key: "id",  label: "order Id"},
