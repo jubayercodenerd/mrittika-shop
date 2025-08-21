@@ -12,8 +12,6 @@ import CategoryGrid from "./CategoryGrid.jsx";
 const HomePage = () => {
     return (
         <>
-            <main className={"min-h-screen w-full flex flex-col justify-center items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
-                <Navbar />
                 <Section>
                     <HeroSwiper/>
                 </Section>
@@ -62,8 +60,6 @@ const HomePage = () => {
                 <Section Header={"Product Category"} Para={"Visit products you are looking for"} className={"w-[95%] sm:w-[70%] md:w-[50%] lg:w-[40%] 2xl:w-[35%]"}>
                     <CategoryGrid/>
                 </Section>
-                <Footer/>
-            </main>
         </>
     )
 }

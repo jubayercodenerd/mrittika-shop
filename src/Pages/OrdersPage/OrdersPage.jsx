@@ -10,9 +10,7 @@ import {FaXmark} from "react-icons/fa6";
 const OrdersPage = () => {
     return (
         <>
-            <main className={"min-h-screen w-full flex flex-col justify-between items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
-                <Navbar/>
-                <Section className={"rounded-md shadow-md p-3 h-full"}>
+                <Section className={"p-3 h-full"}>
                     <H1 className={"self-start"}>Order History...</H1>
                     <Order imageUrl={"/TemporaryProductImages/clayPot1.webp"} productName={"Clay mug terracotta"} phone={'01234567890'} orderId={'ord001'} quantity={5} price={1000} totalPrice={5000} status={"Pending"}/>
                     <Order imageUrl={"/TemporaryProductImages/clayPot1.webp"} productName={"super long ass Name for testing purposes"} phone={'01234567890'} orderId={'ord002'} quantity={5} price={1000} totalPrice={5000} status={"Pending"}/>
@@ -23,8 +21,6 @@ const OrdersPage = () => {
                     <Order imageUrl={"/TemporaryProductImages/clayPot1.webp"} productName={"Clay mug terracotta"} phone={'01234567890'} orderId={'ord007'} quantity={5} price={1000} totalPrice={5000} status={"Completed"}/>
                     <Order imageUrl={"/TemporaryProductImages/clayPot1.webp"} productName={"Clay mug terracotta"} phone={'01234567890'} orderId={'ord008'} quantity={5} price={1000} totalPrice={5000} status={"Completed"}/>
                 </Section>
-                <Footer/>
-            </main>
         </>
     );
 }

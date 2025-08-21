@@ -9,13 +9,9 @@ import Button from "../../components/ui/Button.jsx";
 const ProductPage = () => {
     return (
         <>
-            <main className={"min-h-screen w-full flex flex-col justify-between items-center gap-y-5 md:gap-y-7 lg:gap-y-10"}>
-                <Navbar/>
                     <Section>
                         <ProductDetails images={images} categoryTags={categoryTags} price={120} productName={"Terracotta clay plant pot"}/>
                     </Section>
-                <Footer/>
-            </main>
         </>
     )
 }

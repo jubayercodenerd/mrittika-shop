@@ -65,8 +65,7 @@ const CheckOutPage = () => {
     };
 
     return (
-        <main className="min-h-screen w-full flex flex-col justify-start items-center gap-y-5">
-            <Navbar />
+        <>
             <Section className={"rounded-md shadow-md p-3"}>
                 <H1 className="text-xl font-bold mb-4 self-start">Checkout...</H1>
                 {checkedItems.length > 0 ? (
@@ -172,8 +171,7 @@ const CheckOutPage = () => {
                     </Button>
                 </form>
             </Section>
-            <Footer />
-        </main>
+        </>
     );
 };
 

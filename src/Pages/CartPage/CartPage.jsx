@@ -87,8 +87,7 @@ const CartPage = () => {
         .reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
-        <main className="min-h-screen w-full flex flex-col justify-start items-center gap-y-5">
-            <Navbar />
+        <>
             <Section className="p-6 rounded-md shadow-md">
                 <H1 className="self-start font-medium">Shopping Cart...</H1>
 
@@ -117,8 +116,7 @@ const CartPage = () => {
                     </Button>
                 </div>
             </Section>
-            <Footer />
-        </main>
+        </>
     );
 };
 

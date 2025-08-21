@@ -14,55 +14,28 @@ import CheckOutPage from "./Pages/CheckOutPage/CheckOutPage.jsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx";
 import OrdersPage from "./Pages/OrdersPage/OrdersPage.jsx";
 import ProductViewDetailsPage from "./Pages/ProductPage/ProductPage.jsx";
-
-const columns = [
-    {key: "id",  label: "order Id"},
-    {key: "date",  label: "Date"},
-    {key: "price",  label: "Total Price"},
-    {key: "status",  label: "Status"},
-    {key: "actions",
-        label: "Actions",
-        render: (row) => (
-            <div className={"h-full flex justify-around items-center p-[2px] space-x-1"}>
-                <Button onClick={() => alert("edit " + row.id)} variation={"primary"} className={"px-2 h-full text-lg font-semibold"}>View</Button>
-                <Button onClick={() => alert("cancel " + row.id)} variation={"primary"} className={"px-2 h-full text-lg font-semibold"}>Cancel</Button>
-            </div>
-        )
-    }
-]
-const data = [
-    {
-        id: "ORD001",
-        date: "2025-08-01",
-        price: "৳ 1250",
-        status: "Pending"
-    },
-    {
-        id: "ORD002",
-        date: "2025-08-01",
-        price: "৳ 890",
-        status: "Processing"
-    },
-    {
-        id: "ORD003",
-        date: "2025-07-30",
-        price: "৳ 1490",
-        status: "Delivered"
-    }
-];
+import {allRoutes} from "./Helper/routerHelper.jsx";
+import {BrowserRouter} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
+import CommonLayout from "./components/Layouts/CommonLayout.jsx";
 
 function App() {
-    const handleClick = () => {
-        alert('Hello World!')
-    }
+
   return (
-      //<HomePage/>
-      //<ProductListingPage/>
-      //<CartPage/>
-      //<CheckOutPage/>
-      // <ProfilePage/>
-      //<OrdersPage/>
-      <ProductViewDetailsPage/>
+        <Routes>
+            <Route element={<CommonLayout/>}>
+                {
+                    allRoutes.map((route, index) => (
+                            <Route
+                                key = {index}
+                                path = {route.path}
+                                element={<route.element/>}
+                            />
+                        )
+                    )
+                }
+            </Route>
+        </Routes>
   )
 }
 

@@ -4,6 +4,7 @@ import ProductListingPage from "../Pages/ProductListingPage/ProductListingPage.j
 import ProfilePage from "../Pages/ProfilePage/ProfilePage.jsx";
 import CartPage from "../Pages/CartPage/CartPage.jsx";
 import CheckOutPage from "../Pages/CheckOutPage/CheckOutPage.jsx";
+import OrdersPage from "../Pages/OrdersPage/OrdersPage.jsx";
 
 export const allRoutes = [
     {
@@ -45,6 +46,11 @@ export const allRoutes = [
     {
         path: "/checkout",
         element: CheckOutPage,
+        isPrivate: true
+    },
+    {
+        path: "/orders",
+        element: OrdersPage,
         isPrivate: true
     }
 ]

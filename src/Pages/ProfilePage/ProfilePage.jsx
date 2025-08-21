@@ -25,8 +25,7 @@ const ProfilePage = () => {
     };
 
     return (
-        <main className="min-h-screen w-full flex flex-col justify-between items-center gap-y-5 md:gap-y-7 lg:gap-y-10">
-            <Navbar />
+        <>
             <Section className="px-5">
                 <ProfileInfo
                     {...profile}
@@ -34,8 +33,7 @@ const ProfilePage = () => {
                     handleUpdate={handleUpdate}
                 />
             </Section>
-            <Footer />
-        </main>
+        </>
     );
 };
 

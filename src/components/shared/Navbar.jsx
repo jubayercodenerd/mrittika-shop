@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SearchBar from "../ui/SearchBar.jsx";
 import Button from "../ui/Button.jsx";
+import {useNavigate} from "react-router-dom";
 import {
     FaBars,
     FaBoxes,
@@ -13,16 +14,17 @@ import {
 import {FaXmark} from "react-icons/fa6";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [isMobileSearchBarOpen, setIsMobileSearchBarOpen] = useState(false)
-    const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+    const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
     const toggleMobileSearchBar = () => {
         setIsMobileSearchBarOpen(!isMobileSearchBarOpen)
     }
     const handleSearchOnclick = () => {
         toggleMobileSearchBar();
     }
-    const toggleSideBar = () => {
-        setIsSideBarOpen(!isSideBarOpen);
+    const toggleSidePanel = () => {
+        setIsSidePanelOpen(!isSidePanelOpen);
     }
     return (<>
         <div className="space py-3 flex items-center justify-center px-6 h-15 xl:h-20 mb-12 max-md:mb-0 bg-[#2b2b2b] w-full sticky top-0 z-20 max-md:shadow-gray-400 max-md:shadow-sm">
@@ -32,38 +34,39 @@ const Navbar = () => {
                         src="/Logos/transparent-logo-secondary.png"
                         alt="Logo"
                         className="h-full object-contain"
+                        onClick={() => navigate("/")}
                     />
                 </div>
                 <SearchBar placeHolder="Search for products..." outerDivClassName={`w-80 xl:w-130 lg:w-100 max-md:hidden`}/>
                 <div  className="h-full w-auto flex items-center justify-between {/*border border-red-500*/} ">
                     <ul className={"h-full flex justify-center items-center flex-nowrap gap-1 md:gap-5 text-orange-100"}>
                         <li className={"flex items-center justify-center max-md:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaHome/><p className={"max-xl:hidden"}>Home</p></Button>
+                            <Button onClick={() => {navigate('/')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaHome/><p className={"max-xl:hidden"}>Home</p></Button>
                         </li>
                         <li className={"flex items-center justify-center max-md:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaBoxes/><p className={"max-xl:hidden"}>Products</p></Button>
+                            <Button onClick={() => {navigate('/products')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent "}><FaBoxes/><p className={"max-xl:hidden"}>Products</p></Button>
                         </li>
                         <li className={"flex items-center justify-center max-md:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaTruck/><p className={"max-xl:hidden"}>Orders</p></Button>
+                            <Button onClick={() => {navigate('/orders')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaTruck/><p className={"max-xl:hidden"}>Orders</p></Button>
                         </li>
                         <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaShoppingCart/><p className={"max-xl:hidden"}>Cart</p></Button>
+                            <Button onClick={() => {navigate('/cart')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaShoppingCart/><p className={"max-xl:hidden"}>Cart</p></Button>
                         </li>
                         <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaGlobe/><p className={""}>Login</p></Button>
+                            <Button onClick={() => {navigate('/')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaGlobe/><p className={""}>Login</p></Button>
                         </li>
                         <li className={"flex items-center justify-center max-md:hidden"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaUser/><p className={"max-xl:hidden"}>Profile</p></Button>
+                            <Button onClick={() => {navigate('/profile')}} variation={"ghost"} className={"p-2 gap-1 text-orange-100 border-1 border-transparent"}><FaUser/><p className={"max-xl:hidden"}>Profile</p></Button>
                         </li>
                     </ul>
                 </div>
                 <Button onClick={handleSearchOnclick} variation={"secondary"} className={"h-full aspect-square text-lg p-2 rounded-sm md:hidden"}><FaSearch color={"#4e132f"}/></Button>
-                <button onClick={() => setIsSideBarOpen(true)} className={"cursor-pointer"}>
+                <button onClick={() => setIsSidePanelOpen(true)} className={"cursor-pointer"}>
                     <FaBars className={"text-orange-100 text-2xl md:hidden"}/>
                 </button>
             </div>
             <CategoryBar/>
-            <SidePanel onClick={toggleSideBar} isSideBarOpen={isSideBarOpen}/>
+            <SidePanel onClick={toggleSidePanel} isSideBarOpen={isSidePanelOpen} navigate={navigate} toggleSidePanel={toggleSidePanel}/>
         </div>
             <div className={`fixed inset-0 w-full flex justify-center items-start px-10 py-15 backdrop-blur-2xl z-50 ${isMobileSearchBarOpen ? "": "hidden"}`}>
                 <SearchBar onClick={handleSearchOnclick} placeHolder="search for products" outerDivClassName={`bg-[] h-12 w-full ml-auto mr-auto`}/>
@@ -99,7 +102,7 @@ const CategoryBar = () =>{
     )
 }
 
-const SidePanel = ({onClick, isSideBarOpen}) => {
+const SidePanel = ({onClick, isSideBarOpen, toggleSidePanel, navigate}) => {
     return (
         <div className={`space-y-4 h-screen min-w-55 absolute right-0 top-0 p-2 flex flex-col justify-start items-start bg-orange-100 shadow-gray-400 shadow-sm md:hidden ${isSideBarOpen?"":"hidden"}`}>
             <button onClick={onClick} className={"h-10 aspect-square flex justify-center items-center rounded-full border border-gray-300 cursor-pointer"}>
@@ -108,22 +111,22 @@ const SidePanel = ({onClick, isSideBarOpen}) => {
             <div>
                 <ul className={"flex flex-col justify-start items-start"}>
                     <li className={"flex items-center justify-center"}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaUser/><p>Profile</p></Button>
+                        <Button onClick={() => {navigate('/profile'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaUser/><p>Profile</p></Button>
                     </li>
                     <li className={"flex items-center justify-center"}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaHome/><p>Home</p></Button>
+                        <Button onClick={() => {navigate('/'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaHome/><p>Home</p></Button>
                     </li>
                     <li className={"flex items-center justify-center"}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaBoxes/><p>Products</p></Button>
+                        <Button onClick={() => {navigate('/products'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><FaBoxes/><p>Products</p></Button>
                     </li>
                     <li className={"flex items-center justify-center "}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaTruck/><p className={""}>Orders</p></Button>
+                        <Button onClick={() => {navigate('/orders'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaTruck/><p className={""}>Orders</p></Button>
                     </li>
                     <li className={"flex items-center justify-center "}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaShoppingCart/><p className={""}>Cart</p></Button>
+                        <Button onClick={() => {navigate('/cart'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaShoppingCart/><p className={""}>Cart</p></Button>
                     </li>
                     <li className={"flex items-center justify-center "}>
-                        <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaGlobe/><p className={""}>Login</p></Button>
+                        <Button onClick={() => {navigate('/'); toggleSidePanel()}} variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><FaGlobe/><p className={""}>Login</p></Button>
                     </li>
                 </ul>
             </div>
