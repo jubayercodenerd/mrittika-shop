@@ -19,7 +19,7 @@ const ProductListingPage = () => {
                             {/*<Button variation={"card"} className={"h-8 w-35 sm:h-9 sm:w-40 md:h-10 md-w-45 lg:h-11 lg:w-50 text-xl font-medium"}>0$ - 1290$</Button>
                             <Button variation={"card"} className={"h-8 w-35 sm:h-9 sm:w-30 md:h-10 md-w-35 lg:h-11 lg:w-40 text-xl font-medium gap-x-2"}>Price <FaArrowUp/></Button>*/}
                             <Button variation={"card"} className={"h-10 w-35 sm:h-11 sm:w-35 md:h-12 md-w-40 lg:h-12 lg:w-45 text-md md:text-lg lg:text-xl font-medium px-4"}>
-                                <select className={"w-full h-full focus:outline-none cursor-pointer"}>
+                                <select className={"w-full h-full border-none focus:outline-none cursor-pointer"}>
                                     <option value="default">Default</option>
                                     <option value="priceAsc">Price Asc.</option>
                                     <option value="priceDesc" >Price Desc.</option>
