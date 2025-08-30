@@ -35,7 +35,7 @@ const HeroSwiper = () => {
     };
 
     return (
-        <div className="relative justify-center ml-auto mr-auto w-full aspect-[21/8] rounded-xl overflow-hidden bg-gray-100 z-0">
+        <div className="relative justify-center ml-auto mr-auto w-full aspect-[21/8] rounded-sm overflow-hidden bg-gray-100 z-0">
             <div className="absolute inset-0 z-0">
                 {slides.map((slide, index) => (
                     <div
@@ -74,7 +74,7 @@ const HeroSwiper = () => {
                     variation="accent"
                     className="
             text-black py-1 px-2.5 sm:py-1 sm:px-2.5 xl:py-2 xl:px-5 2xl:py-3 2xl:px-8
-            text-xs md:text-sm lg:text-xl xl:text-xl 2xl:text-2xl
+            text-xs md:text-sm lg:text-xl xl:text-xl 2xl:text-2xl rounded-xs
             font-semibold focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                     aria-label="Shop now"
                 >

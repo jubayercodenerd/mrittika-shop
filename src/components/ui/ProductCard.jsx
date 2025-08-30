@@ -16,8 +16,8 @@ const ProductCard = ({imageUrl,name, stock, slug, basePrice, activePrice}) => {
     const navigate = useNavigate();
 
     return (
-        <Card className={"w-full space-y-1.5 p-2 "} onClick={() => navigate(`/product/${slug}`)}>
-            <div className={"w-full aspect-square rounded-md overflow-hidden flex items-center justify-center relative"}>
+        <Card className={"w-full space-y-1.5 p-2 rounded-xs"} onClick={() => navigate(`/product/${slug}`)}>
+            <div className={"w-full aspect-square overflow-hidden flex items-center justify-center relative rounded-xs"}>
                 <img src={imageUrl} alt="" className={"aspect-square bg-cover"}/>
                 {
                     stock <= 0 && cardMessage("Out of stock")
@@ -37,7 +37,7 @@ const ProductCard = ({imageUrl,name, stock, slug, basePrice, activePrice}) => {
                     price(basePrice, activePrice)
                 }
             </div>
-            <Button onClick={handleButtonClick} variation={"primary"} height={"40px"} fontSize={"18px"} color={"primary"} className={"w-full font-medium gap-x-2"}>
+            <Button onClick={handleButtonClick} variation={"primary"} height={"40px"} fontSize={"18px"} color={"primary"} className={"w-full font-medium gap-x-2 rounded-xs"}>
                 <FaCartShopping/> Add to Cart
             </Button>
         </Card>

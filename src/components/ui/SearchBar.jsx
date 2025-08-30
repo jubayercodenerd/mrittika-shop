@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa"
 
 const SearchBar = ({ placeHolder, inputClassName, outerDivClassName, onClick}) => {
     return (
-        <div className={`flex h-10 rounded-md border- border-[#4e132f] overflow-hidden ${outerDivClassName}`} >
+        <div className={`flex h-10 rounded-xs border- border-[#4e132f] overflow-hidden ${outerDivClassName}`} >
             <input
                 type="text"
                 placeholder={placeHolder}

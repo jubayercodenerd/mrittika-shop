@@ -12,7 +12,7 @@ function attachImages(product) {
     return {
         ...product,
         productImages: product["product-images"]?.map(fileId =>
-            storage.getFilePreview(BUCKET_ID, fileId)
+            storage.getFileView(BUCKET_ID, fileId)
         ) || []
     };
 }
@@ -81,4 +81,16 @@ export async function fetchTopPopularProducts() {
     return res.documents.map(attachImages);
 }
 
-
+export async function fetchDiscountedProducts() {
+    const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+    console.log(res);
+    return res.documents
+        .filter(product => {
+            const base = product["base-price"];
+            const active = product["active-price"];
+            if (!base || !active) return false;
+            const discount = 1 - (active / base);
+            return discount > 0.25;
+        })
+        .map(attachImages);
+}

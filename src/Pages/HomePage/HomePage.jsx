@@ -8,22 +8,17 @@ import Footer from "../../components/shared/Footer.jsx";
 import HeroSwiper from "../../components/ui/HeroSwiper.jsx";
 import P from "../../components/ui/P.jsx";
 import CategoryGrid from "./CategoryGrid.jsx";
-import {fetchTopPopularProducts} from "../../Helper/fetchProducts.js";
+import {fetchDiscountedProducts, fetchFeaturedProducts, fetchTopPopularProducts} from "../../Helper/fetchProducts.js";
 
 const HomePage = () => {
-    const [popularProducts, setPopularProducts] = useState()
+    const [popularProducts, setPopularProducts] = useState();
+    const [featuredProducts, setFeaturedProducts] = useState();
+    const [onSaleProducts, setOnSaleProducts] = useState();
+
     useEffect(() => {
-        const getPopularProducts = async () => {
-            try{
-                const products = await fetchTopPopularProducts();
-                console.log(products);
-                setPopularProducts(products);
-            }
-            catch(error){
-                console.log(error)
-            }
-        }
-        getPopularProducts();
+        fetchProducts(setPopularProducts, fetchTopPopularProducts);
+        fetchProducts(setFeaturedProducts, fetchFeaturedProducts);
+        fetchProducts(setOnSaleProducts, fetchDiscountedProducts);
     }, []);
 
     return (
@@ -48,22 +43,30 @@ const HomePage = () => {
 
                 <Section Header={"Featured Products"} Para={"Find your desired Products"}>
                     <ProductGrid>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
+                        {
+                            (featuredProducts||[]).map((product) => (
+                                <ProductCard imageUrl={product.productImages[0]}
+                                             name={product.name}
+                                             stock={product.stock}
+                                             basePrice={product["base-price"]}
+                                             activePrice={product["active-price"]}
+                                             slug={product.slug}/>
+                            ))
+                        }
                     </ProductGrid>
                 </Section>
                 <Section Header={"On Sale"} Para={"Find the best discounts"}>
                     <ProductGrid>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot1.webp'} stock={10} basePrice={1350} activePrice={400} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
-                        <ProductCard imageUrl={'/TemporaryProductImages/clayPot2.webp'} stock={10} basePrice={5400} activePrice={2000} slug={"23wqdasd"}/>
+                        {
+                            (onSaleProducts||[]).map((product) => (
+                                <ProductCard imageUrl={product.productImages[0]}
+                                             name={product.name}
+                                             stock={product.stock}
+                                             basePrice={product["base-price"]}
+                                             activePrice={product["active-price"]}
+                                             slug={product.slug}/>
+                            ))
+                        }
                     </ProductGrid>
                 </Section>
                 <Section Header={"Product Category"} Para={"Visit products you are looking for"} className={"w-[95%] sm:w-[70%] md:w-[50%] lg:w-[40%] 2xl:w-[35%]"}>
@@ -72,4 +75,16 @@ const HomePage = () => {
         </>
     )
 }
+
+const fetchProducts = async (setProducts, fetchProducts) => {
+    try{
+        const products = await fetchProducts();
+        console.log(products);
+        setProducts(products);
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 export default HomePage
