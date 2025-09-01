@@ -7,7 +7,6 @@ const DATABASE_ID = "68af04bb0004780fc1ec";   // your database ID
 const COLLECTION_ID = "product-list";         // your collection ID
 const BUCKET_ID = "68b0dbf20024475dbb2f";           // your storage bucket ID
 
-// Helper to attach file previews to products
 function attachImages(product) {
     return {
         ...product,
@@ -17,13 +16,11 @@ function attachImages(product) {
     };
 }
 
-// ✅ Fetch ALL products
 export async function fetchAllProducts() {
     const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
     return res.documents.map(attachImages);
 }
 
-// ✅ Fetch ONE product by slug
 export async function fetchProductBySlug(slug) {
     const res = await databases.listDocuments(
         DATABASE_ID,
@@ -33,7 +30,6 @@ export async function fetchProductBySlug(slug) {
     return res.documents.length > 0 ? attachImages(res.documents[0]) : null;
 }
 
-// ✅ Fetch products by category
 export async function fetchProductsByCategory(category) {
     const res = await databases.listDocuments(
         DATABASE_ID,
@@ -43,7 +39,6 @@ export async function fetchProductsByCategory(category) {
     return res.documents.map(attachImages);
 }
 
-// ✅ Search products by name or description
 export async function searchProducts(keyword) {
     const res = await databases.listDocuments(
         DATABASE_ID,
@@ -56,7 +51,6 @@ export async function searchProducts(keyword) {
     return res.documents.map(attachImages);
 }
 
-// ✅ Fetch featured products
 export async function fetchFeaturedProducts() {
     const res = await databases.listDocuments(
         DATABASE_ID,
@@ -66,7 +60,6 @@ export async function fetchFeaturedProducts() {
     return res.documents.map(attachImages);
 }
 
-// ✅ Fetch top 10 popular products
 export async function fetchTopPopularProducts() {
     const res = await databases.listDocuments(
         DATABASE_ID,       // use your constant
@@ -77,7 +70,6 @@ export async function fetchTopPopularProducts() {
         ]
     );
 
-    // Use attachImages helper to convert file IDs to URLs
     return res.documents.map(attachImages);
 }
 

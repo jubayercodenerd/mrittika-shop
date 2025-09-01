@@ -75,35 +75,27 @@ const Navbar = () => {
     )
 }
 
-const CategoryBar = () =>{
-    return(
+const CategoryBar = () => {
+    const navigate = useNavigate();
+
+    return (
         <div className="w-full absolute top-full h-12 flex justify-center items-center bg-orange-100 shadow-gray-400 shadow-sm max-md:hidden">
-            <ul className={"w-[95%] lg:w-[85%] xl:w-[80%] flex justify-center gap-10 items-center font-medium"}>
-                <li className={"flex items-center justify-center "}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Terracotta</p></Button>
-                </li>
-                <li className={"flex items-center justify-center"}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Bamboo Crafts</p></Button>
-                </li>
-                <li className={"flex items-center justify-center"}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>WoodWork</p></Button>
-                </li>
-                <li className={"flex items-center justify-center"}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Fabric & Jute</p></Button>
-                </li>
-                <li className={"flex items-center justify-center "}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Metal Crafts</p></Button>
-                </li>
-                <li className={"flex items-center justify-center "}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Recycled Art</p></Button>
-                </li>
-                <li className={"flex items-center justify-center "}>
-                    <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Home Decor</p></Button>
-                </li>
+            <ul className="w-[95%] lg:w-[85%] xl:w-[80%] flex justify-center gap-10 items-center font-medium">
+                {categories.map((category) => (
+                    <li key={category.slug} className="flex items-center justify-center">
+                        <Button
+                            variation="ghost"
+                            className="p-2 gap-1 active:opacity-50 border-1 border-transparent"
+                            onClick={() => navigate(`/products/category/${category.slug}`)}
+                        >
+                            <p>{category.name}</p>
+                        </Button>
+                    </li>
+                ))}
             </ul>
         </div>
-    )
-}
+    );
+};
 
 const SidePanel = ({onClick, isSideBarOpen, toggleSidePanel, navigate}) => {
     return (
@@ -133,35 +125,37 @@ const SidePanel = ({onClick, isSideBarOpen, toggleSidePanel, navigate}) => {
                     </li>
                 </ul>
             </div>
-            <div className={"ml-3"}>
-                <h1 className={"text-2xl font-bold mb-4"}>Categories</h1>
+            <div className="ml-3">
+                <h1 className="text-2xl font-bold mb-4">Categories</h1>
                 <div className="w-full flex justify-center items-start ml-4">
-                    <ul className={"w-full flex flex-col justify-start gap-3 items-start font-medium "}>
-                        <li className={"flex items-center justify-center"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Terracotta</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Bamboo Crafts</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>WoodWork</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center"}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent "}><p>Fabric & Jute</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Metal Crafts</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Recycled Art</p></Button>
-                        </li>
-                        <li className={"flex items-center justify-center "}>
-                            <Button variation={"ghost"} className={"p-2 gap-1 active:opacity-50 border-1 border-transparent"}><p>Home Decor</p></Button>
-                        </li>
+                    <ul className="w-full flex flex-col justify-start gap-3 items-start font-medium">
+                        {categories.map(category => (
+                            <li key={category.slug} className="flex items-center justify-center">
+                                <Button
+                                    variation="ghost"
+                                    className="p-2 gap-1 active:opacity-50 border-1 border-transparent"
+                                    onClick={() => { navigate(`/products/category/${category.slug}`); toggleSidePanel(); }}
+                                >
+                                    <p>{category.name}</p>
+                                </Button>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
         </div>
     )
 }
+
+
+export const categories = [
+    { slug: "terracotta", name: "Terracotta" },
+    { slug: "bamboo-crafts", name: "Bamboo Crafts" },
+    { slug: "woodwork", name: "WoodWork" },
+    { slug: "fabric-and-jute", name: "Fabric & Jute" },
+    { slug: "metal-crafts", name: "Metal Crafts" },
+    { slug: "recycled-art", name: "Recycled Art" },
+    { slug: "home-decor", name: "Home Decor" },
+];
+
 export default Navbar
