@@ -150,7 +150,6 @@ const SidePanel = ({onClick, isSideBarOpen, toggleSidePanel, navigate}) => {
 
 export const categories = [
     { slug: "terracotta", name: "Terracotta" },
-    { slug: "bamboo-crafts", name: "Bamboo Crafts" },
     { slug: "woodwork", name: "WoodWork" },
     { slug: "fabric-and-jute", name: "Fabric & Jute" },
     { slug: "metal-crafts", name: "Metal Crafts" },

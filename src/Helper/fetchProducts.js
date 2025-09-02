@@ -34,7 +34,7 @@ export async function fetchProductsByCategory(category) {
     const res = await databases.listDocuments(
         DATABASE_ID,
         COLLECTION_ID,
-        [Query.equal("category", category)]
+        [Query.contains("category", category)]
     );
     return res.documents.map(attachImages);
 }

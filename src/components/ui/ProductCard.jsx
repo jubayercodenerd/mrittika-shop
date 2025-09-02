@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import Button from './button.jsx'
+import Button from './Button.jsx'
 import Card from './Card.jsx'
 import {FaCartShopping} from "react-icons/fa6";
 import {useNavigate} from "react-router-dom";

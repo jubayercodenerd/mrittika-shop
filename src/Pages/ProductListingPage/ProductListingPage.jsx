@@ -30,7 +30,12 @@ const ProductListingPage = () => {
                         {/*))}*/}
                     </div>
                     <div className={"w-full flex items-center justify-between flex-wrap space-x-4 gap-y-2"}>
-                        <H1 className={"text-xl self-start"}>All Products...</H1>
+                        <H1 className={"text-xl self-start"}>
+                            {
+                                location.pathname ==="/products" && "All Products" ||
+                                location.pathname.startsWith("/products/search") && `Search Results for "${searchTerm}"` ||
+                                location.pathname.startsWith("/products/category") && `Products in ${categoryStringifier(category)}`
+                            }</H1>
                         <div className={"flex justify-center items-center gap-x-2 "}>
                             {/*<Button variation={"card"} className={"h-8 w-35 sm:h-9 sm:w-40 md:h-10 md-w-45 lg:h-11 lg:w-50 text-xl font-medium"}>0$ - 1290$</Button>
                             <Button variation={"card"} className={"h-8 w-35 sm:h-9 sm:w-30 md:h-10 md-w-35 lg:h-11 lg:w-40 text-xl font-medium gap-x-2"}>Price <FaArrowUp/></Button>*/}
@@ -78,6 +83,13 @@ async function loadProducts(searchTerm, category, location, setProducts) {
         const res = await fetchAllProducts();
         setProducts(res);
     }
+}
+
+const categoryStringifier = (category) => {
+    return category
+        .split("-") // split by hyphen
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // capitalize each
+        .join(" "); // join back with spaces
 }
 const categories = [
     {
